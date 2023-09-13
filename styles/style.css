@@ -1,7 +1,6 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  padding: 20px;
   font-family: var(--main-font), sans-serif;
   font-size: 18px;
   color: var(--text-color, #f1b2ce);
@@ -16,21 +15,17 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 .header {
+  padding: 20px;
   height: 100vh;
-  /* min-height: 768px; */
   width: 100%;
   display: grid;
-  grid-template-rows: 1fr 2fr 1.1fr;
+  grid-template-rows: 1fr 2fr 1fr;
   grid-template-columns: repeat(2, 1fr);
-  /* grid-template-rows: repeat(3, 1fr); */
-  padding-block-end: 20px;
-  margin-block-end: 40px;
+  margin-block-end: 60px;
 }
+
 .header__text-grid {
   grid-column: 2/3;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  grid-template-rows: 0.5fr 1.5fr; */
 }
 .decorated-zone {
   position: relative;
@@ -38,7 +33,6 @@
 .header__theme-menu {
   grid-column: span 2;
   display: flex;
-
   justify-content: center;
   gap: 10px;
 }
@@ -66,8 +60,8 @@
 }
 .corner__decorated {
   position: absolute;
-  bottom: 0px;
-  left: 0;
+  bottom: 20px;
+  left: 20px;
   width: 25px;
   height: 25px;
   border-bottom: 1px solid var(--text-accent-color, #ff0070);
@@ -78,8 +72,8 @@
   height: 25px;
   border-top: 1px solid var(--text-accent-color, #ff0070);
   border-right: 1px solid var(--text-accent-color, #ff0070);
-  right: 0;
-  top: 0;
+  right: 20px;
+  top: 20px;
   position: absolute;
 }
 
@@ -91,7 +85,8 @@
 }
 .header__rec-position {
   position: absolute;
-  right: 37px;
+  top: 20px;
+  right: 55px;
 }
 .header__rec::after {
   content: "";
@@ -112,7 +107,7 @@
   grid-column: span 2;
   align-self: center;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  line-height: 90%;
+  line-height: 82.5%;
   color: var(--title-color, #db00ff);
   text-shadow: 4px 4px 0px #ff0070;
   font-weight: bold;
@@ -131,6 +126,7 @@
   background-color: var(--accent-color);
 }
 .content {
+  padding-inline: 20px;
   display: grid;
   row-gap: 80px;
   margin-block-end: 60px;
@@ -139,16 +135,16 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-auto-flow: row;
-  row-gap: 20px;
+  gap: 20px;
 }
-.content-title {
+.content__title {
   font-family: var(--main-font), sans-serif;
   font-size: 18px;
   color: var(--text-accent-color, #ff0070);
   font-weight: 700;
   line-height: 1.3;
 }
-.grid-block-1 {
+.content__grid-block-1 {
   grid-row: span 2;
 }
 .content__text {
@@ -159,11 +155,10 @@
 .content__block-2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 20px;
+  gap: 20px;
 }
-.grid-block-2 {
+.content__grid-block-2 {
   grid-column: span 3;
-  padding-block-end: 20px;
 }
 .content__block-3 {
   display: grid;
@@ -171,7 +166,7 @@
   grid-auto-flow: row;
   gap: 20px;
 }
-.grid-block-3 {
+.content__grid-block-3 {
   grid-row: span 5;
 }
 .content__accent-text {
@@ -207,9 +202,7 @@
   object-fit: cover;
   object-position: center;
 }
-/* .content__picture-box-1 {
-  grid-area: title;
-} */
+
 .content__picture-box-2 {
   display: block;
   grid-area: mountains;
@@ -227,12 +220,12 @@
   grid-area: street;
 }
 .footer {
+  padding: 20px;
   position: relative;
-  padding-block-start: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 768px;
+  height: 100vh;
 }
 .footer__content {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -241,49 +234,14 @@
   text-shadow: 4px 4px 0px #ff0070;
   font-weight: bold;
 }
-@media (max-width: 375px) {
-  .page {
-    padding: 10px;
-  }
-  .content__picture {
-    row-gap: 10px;
-    grid-template-areas:
-      " mountains"
-      "ice_cream"
-      " caseta"
-      "books"
-      "street";
-  }
-  .header__title {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  }
-  .header__theme-menu {
-    margin-block-start: 66.5px;
-    align-items: end;
-    justify-content: end;
-  }
-  .header__theme-menu-list {
-    flex-direction: column;
-    gap: 13px;
-  }
-  .header {
-    padding-block-end: 10px;
-  }
-  .fotter {
-    padding-block-start: 10px;
-  }
-  .header__text-grid {
-    grid-column: 1/4;
-  }
-  .content__block-1,
-  .content__block-3 {
-    display: flex;
-    flex-direction: column;
-  }
-}
+
 @media (max-width: 768px) {
+  .header {
+    grid-template-rows: 1fr max-content 1fr;
+  }
+
   .header__theme-menu {
-    align-items: end;
+    align-items: center;
     justify-content: end;
   }
   .header__theme-menu-list {
@@ -303,7 +261,78 @@
     display: flex;
     flex-direction: column;
   }
-  .grid-block-2 {
-    max-width: 200px;
+  .content__grid-block-2 {
+    display: grid;
+    grid-template-columns: min-content;
+  }
+  .header__text-grid {
+    justify-self: center;
+    align-self: center;
+  }
+}
+@media (max-width: 375px) {
+  .content {
+    padding-inline: 10px;
+    row-gap: 50px;
+    margin-block-end: 40px;
+  }
+  .content__block-picture {
+    gap: 10px;
+  }
+  .content__picture {
+    row-gap: 10px;
+    grid-template-areas:
+      " mountains"
+      "ice_cream"
+      " caseta"
+      "books"
+      "street";
+  }
+  .header__title {
+    margin-inline-start: 0px;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+  .header__theme-menu {
+    align-items: center;
+    justify-content: end;
+  }
+  .header__theme-menu-list {
+    flex-direction: column;
+    gap: 13px;
+  }
+  .header {
+    padding: 10px;
+    margin-block-end: 40px;
+  }
+  .fotter {
+    padding: 10px;
+  }
+  .header__text-grid {
+    grid-column: 1/4;
+  }
+  .corner__decorated {
+    bottom: 10px;
+    left: 10px;
+  }
+  .corner__decorated-2 {
+    right: 10px;
+    top: 10px;
+  }
+  .header__rec-position {
+    top: 10px;
+    right: 40px;
+  }
+
+  .content__block-1,
+  .content__block-3 {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer__content {
+    display: grid;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+  .content__grid-block-2 {
+    grid-template-columns: max-content;
   }
 }

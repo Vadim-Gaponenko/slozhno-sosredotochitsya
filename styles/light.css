@@ -23,3 +23,17 @@
 .theme_light .header__rec {
   display: none;
 }
+.theme_light .header__theme-menu-button_type_dark:hover {
+  border: 1px solid rgba(50, 49, 45, 0.4);
+}
+.theme_light .header__theme-menu-button_type_auto:hover {
+  border: 1px solid rgba(50, 49, 45, 0.4);
+}
+.theme_light .header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid #353430;
+}
+.theme_light .content__link:focus-visible {
+  outline: none;
+  border-bottom: 1px solid #353430;
+}
