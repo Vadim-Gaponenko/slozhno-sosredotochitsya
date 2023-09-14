@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: var(--main-font), sans-serif;
+  font-family: var(--main-font), monospace;
   font-size: 18px;
   color: var(--text-color, #f1b2ce);
   font-weight: normal;
@@ -30,6 +30,27 @@
 .decorated-zone {
   position: relative;
 }
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--text-accent-color, #ff0070);
+  border-left: 1px solid var(--text-accent-color, #ff0070);
+}
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--text-accent-color, #ff0070);
+  border-right: 1px solid var(--text-accent-color, #ff0070);
+  right: 20px;
+  top: 20px;
+}
+
 .header__theme-menu {
   grid-column: span 2;
   display: flex;
@@ -56,29 +77,20 @@
   outline: 1px solid var(--text-accent-color, #ff0070);
   pointer-events: none;
 }
-.corner__decorated {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 25px;
-  height: 25px;
-  border-bottom: 1px solid var(--text-accent-color, #ff0070);
-  border-left: 1px solid var(--text-accent-color, #ff0070);
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--text-accent-color, #353430);
 }
-.corner__decorated-2 {
-  width: 25px;
-  height: 25px;
-  border-top: 1px solid var(--text-accent-color, #ff0070);
-  border-right: 1px solid var(--text-accent-color, #ff0070);
-  right: 20px;
-  top: 20px;
-  position: absolute;
+.content__link:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--text-accent-color, #353430);
 }
 
 .header__rec {
+  text-transform: uppercase;
   display: block;
   position: absolute;
-  color: #ff0070;
+  color: var(--accent-color, #ff0070);
   line-height: 25px;
 }
 .header__rec-position {
@@ -91,14 +103,14 @@
   position: absolute;
   background-position: center;
   background-size: contain;
-  background-color: #ff0070;
+  background-color: var(--accent-color, #ff0070);
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  box-shadow: 0px 0px 10px 5px #ff0070;
-  margin-block-start: 7.5px;
+  box-shadow: 0px 0px 10px 5px var(--accent-color, #ff0070);
+  margin-block-start: 6.3px;
   inset-block-start: 5%;
-  inset-inline-start: 40px;
+  inset-inline-start: 43px;
 }
 
 .header__title {
@@ -120,7 +132,7 @@
   font-size: 18px;
   font-weight: bold;
   line-height: 1.3;
-  color: #000028;
+  color: var(--bg-color, #000028);
   background-color: var(--accent-color);
 }
 .content {
@@ -157,6 +169,7 @@
 }
 .content__grid-block-2 {
   grid-column: span 3;
+  padding-inline-end: 70%;
 }
 .content__block-3 {
   display: grid;
@@ -171,7 +184,7 @@
   font-size: inherit;
   font-weight: normal;
   line-height: 23.4px;
-  color: #000028;
+  color: var(--bg-color, #000028);
   background-color: var(--accent-color, #ff0070);
 }
 .content__text > .accent-text {
@@ -200,26 +213,23 @@
   object-fit: cover;
   object-position: center;
 }
-
-.content__picture-box-2 {
-  display: block;
+.content__picture-png:nth-child(1) {
   grid-area: mountains;
 }
-.content__picture-box-3 {
+.content__picture-png:nth-child(2) {
   grid-area: ice_cream;
 }
-.content__picture-box-4 {
+.content__picture-png:nth-child(3) {
   grid-area: caseta;
 }
-.content__picture-box-5 {
+.content__picture-png:nth-child(4) {
   grid-area: books;
 }
-.content__picture-box-6 {
+.content__picture-png:nth-child(5) {
   grid-area: street;
 }
 .footer {
   padding: 20px;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -256,6 +266,7 @@
   .content__grid-block-2 {
     display: grid;
     grid-template-columns: min-content;
+    padding-inline-end: 0;
   }
   .header__text-grid {
     justify-self: center;
@@ -302,11 +313,12 @@
   .header__text-grid {
     grid-column: 1/4;
   }
-  .corner__decorated {
+  .decorated-zone::before {
     bottom: 10px;
     left: 10px;
   }
-  .corner__decorated-2 {
+
+  .decorated-zone::after {
     right: 10px;
     top: 10px;
   }
@@ -325,6 +337,6 @@
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
   .content__grid-block-2 {
-    grid-template-columns: max-content;
+    display: block;
   }
 }
