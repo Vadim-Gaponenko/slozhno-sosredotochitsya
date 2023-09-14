@@ -18,13 +18,15 @@
   */
 }
 .theme_dark .header__theme-menu-button_type_light:hover {
+  transition-duration: 2s;
   border: 1px solid rgba(255, 0, 112, 0.4);
 }
 .theme_dark .header__theme-menu-button_type_auto:hover {
+  transition-duration: 2s;
   border: 1px solid rgba(255, 0, 112, 0.4);
 }
 @media (prefers-color-scheme: dark) {
-  :root {
+  .page {
     --bg-color: #000028;
     --text-color: #f1b2ce;
     --accent-color: #ff0070;
@@ -34,9 +36,11 @@
   }
 
   .header__theme-menu-button_type_dark:hover {
+    transition-duration: 1s;
     border: 1px solid rgba(255, 0, 112, 0.4);
   }
   .header__theme-menu-button_type_light:hover {
+    transition-duration: 1s;
     border: 1px solid rgba(255, 0, 112, 0.4);
   }
 }

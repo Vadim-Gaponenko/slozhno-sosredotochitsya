@@ -23,7 +23,11 @@
   grid-template-columns: repeat(2, 1fr);
   margin-block-end: 60px;
 }
-
+.header__theme-menu-button_type_light,
+.header__theme-menu-button_type_auto,
+.header__theme-menu-button_type_dark {
+  transition-duration: 2s;
+}
 .header__text-grid {
   grid-column: 2/3;
 }
@@ -243,7 +247,7 @@
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .header {
     grid-template-rows: 1fr max-content 1fr;
   }
@@ -273,7 +277,7 @@
     align-self: center;
   }
 }
-@media (max-width: 375px) {
+@media (width <= 375px) {
   .content {
     padding-inline: 10px;
     row-gap: 50px;
