@@ -16,6 +16,16 @@
     чем стили в медиазапросе предпочтений пользователя
   */
 }
+@media (width <= 768px) {
+  .theme_light .header__title {
+    text-shadow: 4px 4px 0px #ff8dcb;
+  }
+}
+@media (width <= 768px) {
+  .theme_light .footer__title {
+    text-shadow: 4px 4px 0px #ff8dcb;
+  }
+}
 
 .theme_light .header__rec {
   display: none;

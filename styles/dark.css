@@ -12,10 +12,16 @@
   --text-accent-color: #ff0070;
   --main-font: "IBM Plex mono";
   --title-color: #db00ff;
+
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+}
+@media (width <= 768px) {
+  .page.theme_light {
+    --text-color: black;
+  }
 }
 .theme_dark .header__theme-menu-button_type_light:hover {
   transition-duration: 2s;
