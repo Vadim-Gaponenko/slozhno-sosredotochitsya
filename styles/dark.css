@@ -18,11 +18,7 @@
     чем стили в медиазапросе предпочтений пользователя
   */
 }
-@media (width <= 768px) {
-  .page.theme_light {
-    --text-color: black;
-  }
-}
+
 .theme_dark .header__theme-menu-button_type_light:hover {
   transition-duration: 2s;
   border: 1px solid rgba(255, 0, 112, 0.4);
