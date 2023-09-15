@@ -41,12 +41,14 @@
 
 @media (prefers-color-scheme: light) {
   .page {
+    --background-image: url(../images/cover-image-light.png);
     --text-color: #353430;
     --accent-color: #ff8dcb;
     --title-color: #ffc2e6;
     --text-accent-color: #353430;
     --bg-color: #353430;
   }
+
   .theme_light .header__rec {
     display: none;
   }
