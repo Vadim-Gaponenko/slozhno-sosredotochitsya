@@ -284,7 +284,7 @@
     align-self: center;
   }
 }
-@media (width <= 450px) {
+@media (width <= 500px) {
   .content {
     padding-inline: 10px;
     row-gap: 50px;
