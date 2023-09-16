@@ -30,11 +30,15 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .header__rec:not(.theme_dark .header__rec) {
+  /* .header__rec:not(.theme_dark .header__rec) {
+    display: none;
+  } */
+  .theme_auto .header__rec {
     display: none;
   }
 
   .page {
+    --background: #fff1f7;
     --background-image: url(../images/cover-image-light.png);
     --text-color: #353430;
     --accent-color: #ff8dcb;
@@ -50,5 +54,13 @@
   .header__theme-menu-button_type_light:hover {
     transition-duration: 1s;
     border: 1px solid rgba(50, 49, 45, 0.4);
+  }
+}
+@media (width <= 768px) and (prefers-color-scheme: light) {
+  .header__title:not(.theme_dark .header__title) {
+    --shadow-color: #ff8dcb;
+  }
+  .footer__title:not(.theme_dark .footer__title) {
+    --shadow-color: #ff8dcb;
   }
 }

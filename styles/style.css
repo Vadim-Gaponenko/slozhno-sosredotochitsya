@@ -128,7 +128,7 @@
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 82.5%;
   color: var(--title-color, #db00ff);
-  text-shadow: 4px 4px 0px #ff0070;
+  text-shadow: 4px 4px 0px var(--shadow-color, #ff0070);
   font-weight: bold;
   margin-inline-start: -20px;
 }
@@ -192,7 +192,7 @@
 }
 .content__accent-text {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 23.4px;
   color: var(--bg-color, #000028);
   background-color: var(--accent-color, #ff0070);
@@ -249,12 +249,12 @@
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 82.5%;
   color: var(--title-color, #db00ff);
-  text-shadow: 2px 2px 0px #ff0070;
+  text-shadow: 2px 2px 0px var(--shadow-color, #ff0070);
 
   font-weight: bold;
 }
 
-@media (width <= 850px) {
+@media (width <= 950px) {
   .header {
     grid-template-rows: 1fr max-content 1fr;
   }
@@ -288,7 +288,7 @@
     align-self: center;
   }
 }
-@media (width <= 500px) {
+@media (width <= 690px) {
   .content {
     padding-inline: 10px;
     row-gap: 50px;

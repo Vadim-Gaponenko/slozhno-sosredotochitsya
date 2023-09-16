@@ -5,6 +5,7 @@
 */
 
 .page.theme_dark {
+  --background: #000028;
   --background-image: url(../images/cover-image-dark.png);
   --bg-color: #000028;
   --text-color: #f1b2ce;
@@ -29,6 +30,7 @@
 }
 @media (prefers-color-scheme: dark) {
   .page {
+    --background-image: url(../images/cover-image-dark.png);
     --bg-color: #000028;
     --text-color: #f1b2ce;
     --accent-color: #ff0070;

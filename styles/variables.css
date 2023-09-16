@@ -3,6 +3,7 @@
   и их переопределение под различные устройства
 */
 :root {
+  --background: #000028;
   --link-color: #f1b2ce;
   --bg-color: #000028;
   --text-color: #f1b2ce;
@@ -10,5 +11,7 @@
   --text-accent-color: #ff0070;
   --main-font: "IBM Plex mono";
   --title-color: #db00ff;
+  --shadow-color: #ff0070;
+
   --background-image: url(../images/cover-image-dark.png);
 }
