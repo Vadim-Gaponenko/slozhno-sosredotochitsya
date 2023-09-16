@@ -30,9 +30,6 @@
 }
 
 @media (prefers-color-scheme: light) {
-  /* .header__rec:not(.theme_dark .header__rec) {
-    display: none;
-  } */
   .theme_auto .header__rec {
     display: none;
   }
